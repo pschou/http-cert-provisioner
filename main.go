@@ -16,15 +16,14 @@ import (
 var (
 	about = `HTTP-Cert-Provisioner
 
-This utility is intended to listen on a port and handle HTTP/HTTPS GET requests
-for certificates, the name of the file name is ignored an only the listenPath
-determines which directory should be the request prefix, and the extension will
-determine which CERTIFICATE file to be sent.  Note the CERTIFICATE file must
-have the file naming convention of /certs/my.fqdn.com.pem to be able to be
-served up with a /server.pem request coming from a server with the rDNS entry
-for the given ip pointing back to the correct FQDN.  For security, the forward
-DNS is also checked to prevent rogue rDNS entries pointing to unauthorized
-FQDNs.
+This utility listens on a port and handles HTTP/HTTPS GET requests for
+certificates; the listenPath determines which URL prefix is required, and the
+extension from the filename will determine which CERTIFICATE file to send (PEM,
+JKS, P12).  Note the CERTIFICATE file must have the file naming convention of
+/certs/my.fqdn.com.pem to be able to be served up with a /server.pem request
+coming from a server with the rDNS entry for the given ip pointing back to the
+correct FQDN.  For security, this verifies forward DNS records to prevent rogue
+rDNS entries pointing to unauthorized FQDNs.
 `
 	basePath   = flag.String("path", "certs/", "Directory which to serve certs from")
 	listen     = flag.String("listen", ":1443", "Where to listen to incoming connections (example 1.2.3.4:1443)")

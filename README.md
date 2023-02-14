@@ -26,17 +26,16 @@ $ curl -O http://localhost:1443/server.pem
 
 ```
 # http-cert-provisioner -h
-HTTP-Cert-Provisioner (github.com/pschou/http-cert-provisioner, version: 0.1.20230214.0802)
+HTTP-Cert-Provisioner (github.com/pschou/http-cert-provisioner, version: 0.1.20230214.0813)
 
-This utility is intended to listen on a port and handle HTTP/HTTPS GET requests
-for certificates, the name of the file name is ignored an only the listenPath
-determines which directory should be the request prefix, and the extension will
-determine which CERTIFICATE file to be sent.  Note the CERTIFICATE file must
-have the file naming convention of /certs/my.fqdn.com.pem to be able to be
-served up with a /server.pem request coming from a server with the rDNS entry
-for the given ip pointing back to the correct FQDN.  For security, the forward
-DNS is also checked to prevent rogue rDNS entries pointing to unauthorized
-FQDNs.
+This utility listens on a port and handles HTTP/HTTPS GET requests for
+certificates; the listenPath determines which URL prefix is required, and the
+extension from the filename will determine which CERTIFICATE file to send (PEM,
+JKS, P12).  Note the CERTIFICATE file must have the file naming convention of
+/certs/my.fqdn.com.pem to be able to be served up with a /server.pem request
+coming from a server with the rDNS entry for the given ip pointing back to the
+correct FQDN.  For security, this verifies forward DNS records to prevent rogue
+rDNS entries pointing to unauthorized FQDNs.
 
 
 Usage: ./http-cert-provisioner [options]
