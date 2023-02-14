@@ -1,6 +1,6 @@
 # http-cert-provisioner
 
-A simple HTTPS request handler to provision certs based on source IP address.
+A simple HTTP/HTTPS request handler to provision certs based on source IP address.
 
 ## Example:
 
@@ -26,7 +26,7 @@ $ curl -O http://localhost:1443/server.pem
 
 ```
 # http-cert-provisioner -h
-HTTP-Cert-Provisioner (github.com/pschou/http-cert-provisioner, version: 0.1.20230214.0754)
+HTTP-Cert-Provisioner (github.com/pschou/http-cert-provisioner, version: 0.1.20230214.0802)
 
 This utility is intended to listen on a port and handle HTTP/HTTPS GET requests
 for certificates, the name of the file name is ignored an only the listenPath
