@@ -1,6 +1,6 @@
 # http-cert-provisioner
 
-A simple HTTPS request handler to provision certs based on source IP address.
+A simple HTTP/HTTPS request handler to provision certs based on source IP address.
 
 ## Example:
 
